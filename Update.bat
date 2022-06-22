@@ -21,8 +21,8 @@ IF "%NEW_CLIENT%" == "%CLIENT%" GOTO skip
 
 IF NOT [%CLIENT%] == [] RMDIR /s /q .dbfiles\bin\Dropbox\Client && MKDIR .dbfiles\bin\Dropbox\Client
 
-7z e .update\DropboxOfflineInstaller.exe -o.update Installer.exe.* | FIND "Extracting archive:"
-7z x .update\Installer.exe.* -o.update | FIND "Extracting archive:"
+7z e .update\DropboxOfflineInstaller.exe -o.update DropboxClientInstaller.exe.* | FIND “Extracting archive:”
+7z x .update\DropboxClientInstaller.exe.* -o.update | FIND “Extracting archive:”
 
 ROBOCOPY .update\$0 .dbfiles\bin\Dropbox\Client /NFL /NDL /NJH /NJS /NS /NC /E /R:0 /DCOPY:T
 
